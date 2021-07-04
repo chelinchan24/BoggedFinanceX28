@@ -1,6 +1,6 @@
 {
   "name": "BoggedFinance 28倍",
-  "description": "在錢包金額旁邊顯示乘以 28 倍後的額度，計算出新台幣的大約金額。",
+  "description": "在錢包金額下方顯示乘以 28 倍後的額度，計算出新台幣的大約金額。",
   "version": "1.0",
   "manifest_version": 3,
   "permissions": [
