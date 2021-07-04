@@ -9,4 +9,4 @@
 本套件未封裝，請參閱[開發說明文件](https://support.google.com/chrome/a/answer/2714278?hl=zh-Hant)的「步驟 2」來載入。
 
 ## 授權
-本套件以[姓名標示-非商業性 4.0 國際](https://creativecommons.org/licenses/by-nc/4.0/deed.zh_TW)發布
+本套件以[姓名標示-非商業性 4.0 國際](https://creativecommons.org/licenses/by-nc/4.0/deed.zh_TW)發布，作者 @chelinchan24。
