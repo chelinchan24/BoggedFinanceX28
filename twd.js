@@ -1,19 +1,28 @@
 window.onload = function () {
-    var container = document.createElement('h3');
+    var wait = setInterval(function() {
+        var balance = document.querySelector("#chartWrapper > div.text-white.justify-between.z-50.lg\\:flex-wrap.flex.flex-col.lg\\:flex-row.lg\\:items-center > div.flex.flex-row.place-content-center.lg\\:place-content-start.lg\\:mr-4.flex-wrap.z-30 > div.items-center.lg\\:h-16.h-10.lg\\:bg-transparent.bg-white.dark\\:bg-transparent.flex.flex-row.justify-center.text-center.lg\\:text-left.lg\\:justify-start.space-x-3.lg\\:pt-0.lg\\:my-1\\.5.my-0.sm\\:space-x-6.w-full.lg\\:w-auto > span.sm\\:flex.lg\\:flex-col.flex-row.hidden.items-center.lg\\:items-start > h4")
+        if (typeof(balance) != 'undefined' && balance != null) {
+            loadvalue()
+        }
+    }, 100); // check every 100ms
 
-    container.setAttribute('id', 'twd-price')
-    container.setAttribute('class', 'dark:text-primary text-primary-dark mt-2 flex flex-row items-center')
-    container.setAttribute('style', 'font-size:18px !important;  display:block !important; margin: 0px; opacity: 0.8')
+    function loadvalue() {
+        clearInterval(wait);
+        var container = document.createElement('p');
+        var balance = document.querySelector("#chartWrapper > div.text-white.justify-between.z-50.lg\\:flex-wrap.flex.flex-col.lg\\:flex-row.lg\\:items-center > div.flex.flex-row.place-content-center.lg\\:place-content-start.lg\\:mr-4.flex-wrap.z-30 > div.items-center.lg\\:h-16.h-10.lg\\:bg-transparent.bg-white.dark\\:bg-transparent.flex.flex-row.justify-center.text-center.lg\\:text-left.lg\\:justify-start.space-x-3.lg\\:pt-0.lg\\:my-1\\.5.my-0.sm\\:space-x-6.w-full.lg\\:w-auto > span.sm\\:flex.lg\\:flex-col.flex-row.hidden.items-center.lg\\:items-start > h4")
 
-    document.querySelector("body > div > div.flex.pt-20.h-full.relative > div > nav > div.p-4").appendChild(container)
+        container.setAttribute('id', 'twd-price')
+        container.setAttribute('style', 'display: inline-block !important; opacity: 0.8; font-size: 15px;')
 
-    setInterval(updatePrice, 8000)
+        balance.appendChild(container)
 
-    function updatePrice () {
-        var twd = Number(document.evaluate("/html/body/div/div[1]/div/nav/div[1]/h3/text()", document, null, XPathResult.STRING_TYPE, null).stringValue.split('$')[1])*28
-        var numberFormat = new Intl.NumberFormat('en-US')
-        var formatedNumber = numberFormat.format(twd.toFixed(3))
-        document.getElementById('twd-price').innerText = '≈NT$' + formatedNumber
+        setInterval(updatePrice, 8000)
+
+        function updatePrice () {
+            var twd = Number(document.evaluate("//*[@id=\"chartWrapper\"]/div[1]/div[1]/div[2]/span[4]/h4/text()", document, null, XPathResult.STRING_TYPE, null).stringValue.split('$')[1])*28
+            var numberFormat = new Intl.NumberFormat('en-US')
+            var formatedNumber = numberFormat.format(twd.toFixed(3))
+            document.getElementById('twd-price').innerText = '≈NT$' + formatedNumber
+        }
     }
-
 }
