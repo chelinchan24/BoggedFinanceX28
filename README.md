@@ -1,5 +1,5 @@
 # BoggedFinance 28 倍
-<img width="344" alt="截圖 2021-07-22 上午1 40 01" src="https://user-images.githubusercontent.com/16677586/126534947-9f0e588f-60f7-42d0-8142-57dde58aa03b.png">
+<img width="344" alt="截圖 2021-07-22 上午1 39 18" src="https://user-images.githubusercontent.com/16677586/126535042-b68d8c50-6f70-4776-ae9c-d21c21ecb854.png">
 
 一款 Google Chrome 擴充套件，用於在 Bogged Finance 網站的錢包金額下面，顯示美金乘以 28 倍後的額度，藉此計算出新台幣的大約金額。
 
